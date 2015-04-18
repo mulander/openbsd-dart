@@ -1,0 +1,17 @@
+$OpenBSD$
+--- dart/runtime/vm/signal_handler.h.orig	Sat Apr 18 21:51:34 2015
++++ dart/runtime/vm/signal_handler.h	Sun Apr 19 00:27:33 2015
+@@ -8,9 +8,12 @@
+ #include "vm/allocation.h"
+ #include "vm/globals.h"
+ 
+-#if defined(TARGET_OS_LINUX)
++#if defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ #include <signal.h>  // NOLINT
+ #include <ucontext.h>  // NOLINT
++#elif defined(__OpenBSD__)
++#include <signal.h> // NOLINT
++typedef struct sigcontext mcontext_t;
+ #elif defined(TARGET_OS_ANDROID)
+ #include <signal.h>  // NOLINT
+ #if !defined(__BIONIC_HAVE_UCONTEXT_T)

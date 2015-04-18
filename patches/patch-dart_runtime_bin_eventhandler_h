@@ -1,0 +1,15 @@
+$OpenBSD$
+--- dart/runtime/bin/eventhandler.h.orig	Sat Apr 18 20:44:46 2015
++++ dart/runtime/bin/eventhandler.h	Sat Apr 18 20:45:54 2015
+@@ -595,9 +595,9 @@ class DescriptorInfoMultipleMixin : public DI {
+ // The event handler delegation class is OS specific.
+ #if defined(TARGET_OS_ANDROID)
+ #include "bin/eventhandler_android.h"
+-#elif defined(TARGET_OS_LINUX)
++#elif defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ #include "bin/eventhandler_linux.h"
+-#elif defined(TARGET_OS_MACOS)
++#elif defined(TARGET_OS_MACOS) || defined(__OpenBSD__)
+ #include "bin/eventhandler_macos.h"
+ #elif defined(TARGET_OS_WINDOWS)
+ #include "bin/eventhandler_win.h"
