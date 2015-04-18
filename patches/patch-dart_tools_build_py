@@ -1,0 +1,21 @@
+$OpenBSD$
+--- dart/tools/build.py.orig	Tue Mar 24 08:50:19 2015
++++ dart/tools/build.py	Sat Apr 18 16:06:31 2015
+@@ -112,7 +112,7 @@ def ProcessOptions(options, args):
+       return False
+   options.os = [ProcessOsOption(os_name) for os_name in options.os]
+   for os_name in options.os:
+-    if not os_name in ['android', 'freebsd', 'linux', 'macos', 'win32']:
++    if not os_name in ['android', 'freebsd', 'linux', 'macos', 'openbsd', 'win32']:
+       print "Unknown os %s" % os_name
+       return False
+     if os_name != HOST_OS:
+@@ -435,7 +435,7 @@ def BuildOneConfig(options, target, target_os, mode, a
+              ]
+   else:
+     make = 'make'
+-    if HOST_OS == 'freebsd':
++    if HOST_OS in ('freebsd', 'openbsd'):
+       make = 'gmake'
+       # work around lack of flock
+       os.environ['LINK'] = '$(CXX)'

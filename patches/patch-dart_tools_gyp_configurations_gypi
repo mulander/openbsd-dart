@@ -1,0 +1,11 @@
+$OpenBSD$
+--- dart/tools/gyp/configurations.gypi.orig	Sat Apr 18 13:18:47 2015
++++ dart/tools/gyp/configurations.gypi	Sat Apr 18 13:19:49 2015
+@@ -24,6 +24,7 @@
+       ['"<(target_arch)"=="simmips"', { 'dart_target_arch': 'SIMMIPS', }],
+       [ 'OS=="linux"', { 'dart_target_os': 'Linux', } ],
+       [ 'OS=="mac"', { 'dart_target_os': 'Macos', } ],
++      [ 'OS=="openbsd"', { 'dart_target_os': 'Linux', } ],
+       [ 'OS=="win"', { 'dart_target_os': 'Win', } ],
+       # The OS is set to "android" only when we are building Dartium+Clank. We
+       # use 'chrome_target_os' so that Release and Debug configurations inherit
