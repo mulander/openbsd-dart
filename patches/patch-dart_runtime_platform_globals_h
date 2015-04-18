@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/platform/globals.h.orig	Sat Apr 18 20:08:45 2015
++++ dart/runtime/platform/globals.h	Sat Apr 18 20:08:56 2015
+@@ -86,7 +86,7 @@
+ //   - with gcc, run: "echo | gcc -E -dM -"
+ #if defined(__ANDROID__)
+ #define TARGET_OS_ANDROID 1
+-#elif defined(__linux__) || defined(__FreeBSD__)
++#elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define TARGET_OS_LINUX 1
+ #elif defined(__APPLE__)
+ #define TARGET_OS_MACOS 1
