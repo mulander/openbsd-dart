@@ -66,9 +66,6 @@ LIB_DEPENDS=	devel/libexecinfo \
 		audio/speex \
 		print/cups,-libs
 
-pre-configure:
-	echo ${MAKE_ENV}
-
 do-configure:
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} /usr/local/bin/python2.7 ./dart/tools/compiler_scripts/generate_my_projects.py && \
 	env -i ${CONFIGURE_ENV} /usr/local/bin/python2.7 ./dart/editor/build/generate_sources.py && \
