@@ -1,6 +1,6 @@
 $OpenBSD$
 --- dart/runtime/vm/os_linux.cc.orig	Sun Apr 19 00:39:25 2015
-+++ dart/runtime/vm/os_linux.cc	Sun Apr 19 00:40:11 2015
++++ dart/runtime/vm/os_linux.cc	Sun Apr 19 01:13:43 2015
 @@ -9,7 +9,7 @@
  
  #include <errno.h>  // NOLINT
@@ -10,3 +10,12 @@ $OpenBSD$
  #include <time.h>  // NOLINT
  #include <sys/resource.h>  // NOLINT
  #include <sys/time.h>  // NOLINT
+@@ -272,7 +272,7 @@ class JitdumpCodeObserver : public CodeObserver {
+   pid_t gettid() {
+     // libc doesn't wrap the Linux-specific gettid system call.
+     // Note that this thread id is not the same as the posix thread id.
+-    return syscall(SYS_gettid);
++    return getthrid();
+   }
+ 
+   uint64_t GetKernelTimeNanos() {
