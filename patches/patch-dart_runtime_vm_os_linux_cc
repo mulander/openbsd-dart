@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/vm/os_linux.cc.orig	Sun Apr 19 00:39:25 2015
++++ dart/runtime/vm/os_linux.cc	Sun Apr 19 00:40:11 2015
+@@ -9,7 +9,7 @@
+ 
+ #include <errno.h>  // NOLINT
+ #include <limits.h>  // NOLINT
+-#include <malloc.h>  // NOLINT
++#include <stdlib.h> // NOLINT
+ #include <time.h>  // NOLINT
+ #include <sys/resource.h>  // NOLINT
+ #include <sys/time.h>  // NOLINT
