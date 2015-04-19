@@ -1,0 +1,36 @@
+$OpenBSD$
+--- dart/runtime/vm/signal_handler_linux.cc.orig	Mon Apr 20 01:02:38 2015
++++ dart/runtime/vm/signal_handler_linux.cc	Mon Apr 20 01:04:48 2015
+@@ -12,7 +12,9 @@ namespace dart {
+ uintptr_t SignalHandler::GetProgramCounter(const mcontext_t& mcontext) {
+   uintptr_t pc = 0;
+ 
+-#if defined(TARGET_ARCH_IA32)
++#if defined(__OpenBSD__)
++  UNIMPLEMENTED();
++#elif defined(TARGET_ARCH_IA32)
+   pc = static_cast<uintptr_t>(mcontext.gregs[REG_EIP]);
+ #elif defined(TARGET_ARCH_X64)
+   pc = static_cast<uintptr_t>(mcontext.gregs[REG_RIP]);
+@@ -38,7 +40,9 @@ uintptr_t SignalHandler::GetProgramCounter(const mcont
+ uintptr_t SignalHandler::GetFramePointer(const mcontext_t& mcontext) {
+   uintptr_t fp = 0;
+ 
+-#if defined(TARGET_ARCH_IA32)
++#if defined(__OpenBSD__)
++  UNIMPLEMENTED();
++#elif defined(TARGET_ARCH_IA32)
+   fp = static_cast<uintptr_t>(mcontext.gregs[REG_EBP]);
+ #elif defined(TARGET_ARCH_X64)
+   fp = static_cast<uintptr_t>(mcontext.gregs[REG_RBP]);
+@@ -65,7 +69,9 @@ uintptr_t SignalHandler::GetFramePointer(const mcontex
+ uintptr_t SignalHandler::GetCStackPointer(const mcontext_t& mcontext) {
+   uintptr_t sp = 0;
+ 
+-#if defined(TARGET_ARCH_IA32)
++#if defined(__OpenBSD__)
++  UNIMPLEMENTED();
++#elif defined(TARGET_ARCH_IA32)
+   sp = static_cast<uintptr_t>(mcontext.gregs[REG_ESP]);
+ #elif defined(TARGET_ARCH_X64)
+   sp = static_cast<uintptr_t>(mcontext.gregs[REG_RSP]);
