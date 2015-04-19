@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/vm/os_thread.h.orig	Sun Apr 19 22:06:20 2015
++++ dart/runtime/vm/os_thread.h	Sun Apr 19 22:06:52 2015
+@@ -9,7 +9,7 @@
+ #include "vm/allocation.h"
+ 
+ // Declare the OS-specific types ahead of defining the generic classes.
+-#if defined(TARGET_OS_ANDROID)
++#if defined(TARGET_OS_ANDROID) || defined(__OpenBSD__)
+ #include "vm/os_thread_android.h"
+ #elif defined(TARGET_OS_LINUX)
+ #include "vm/os_thread_linux.h"
