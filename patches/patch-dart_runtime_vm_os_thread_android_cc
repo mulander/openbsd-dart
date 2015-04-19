@@ -1,0 +1,36 @@
+$OpenBSD$
+--- dart/runtime/vm/os_thread_android.cc.orig	Mon Apr 20 00:07:44 2015
++++ dart/runtime/vm/os_thread_android.cc	Mon Apr 20 00:48:14 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"  // NOLINT
+-#if defined(TARGET_OS_ANDROID)
++#if defined(TARGET_OS_ANDROID) || defined(__OpenBSD__)
+ 
+ #include "vm/os_thread.h"
+ 
+@@ -147,7 +147,7 @@ intptr_t OSThread::GetMaxStackSize() {
+ 
+ 
+ ThreadId OSThread::GetCurrentThreadId() {
+-  return gettid();
++  return pthread_self();
+ }
+ 
+ 
+@@ -158,12 +158,12 @@ bool OSThread::Join(ThreadId id) {
+ 
+ intptr_t OSThread::ThreadIdToIntPtr(ThreadId id) {
+   ASSERT(sizeof(id) == sizeof(intptr_t));
+-  return static_cast<intptr_t>(id);
++  return reinterpret_cast<intptr_t>(id);
+ }
+ 
+ 
+ bool OSThread::Compare(ThreadId a, ThreadId b) {
+-  return a == b;
++  return pthread_equal(a, b) != 0;
+ }
+ 
+ 

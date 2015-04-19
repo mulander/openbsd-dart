@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/vm/os_thread_linux.cc.orig	Sun Apr 19 23:55:01 2015
++++ dart/runtime/vm/os_thread_linux.cc	Mon Apr 20 00:48:07 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"  // NOLINT
+-#if defined(TARGET_OS_LINUX)
++#if defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ 
+ #include "vm/os_thread.h"
+ 
