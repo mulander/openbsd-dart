@@ -1,6 +1,6 @@
 $OpenBSD$
 --- dart/runtime/vm/os_linux.cc.orig	Sun Apr 19 00:39:25 2015
-+++ dart/runtime/vm/os_linux.cc	Sun Apr 19 01:13:43 2015
++++ dart/runtime/vm/os_linux.cc	Sun Apr 19 23:14:31 2015
 @@ -9,7 +9,7 @@
  
  #include <errno.h>  // NOLINT
@@ -19,3 +19,14 @@ $OpenBSD$
    }
  
    uint64_t GetKernelTimeNanos() {
+@@ -411,8 +411,8 @@ void* OS::AlignedAllocate(intptr_t size, intptr_t alig
+   const int kMinimumAlignment = 16;
+   ASSERT(Utils::IsPowerOfTwo(alignment));
+   ASSERT(alignment >= kMinimumAlignment);
+-  void* p = memalign(alignment, size);
+-  if (p == NULL) {
++  void* p = NULL;
++  if(posix_memalign(&p, alignment, size)) {
+     UNREACHABLE();
+   }
+   return p;
