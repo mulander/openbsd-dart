@@ -1,5 +1,5 @@
 # openbsd-dart
-Work in progres port for dartlng.org for OpenBSD - DO NOT USE IN PRODUCTION
+Work in progres port for dartlang.org for OpenBSD - DO NOT USE IN PRODUCTION
 
 The port started from /usr/ports/www/chromium and currently contains a ton of
 stuff that's not really needed. The way the port is perfomed is hacky to say the
