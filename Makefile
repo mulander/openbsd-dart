@@ -72,6 +72,6 @@ do-configure:
 	env -i ${CONFIGURE_ENV} /usr/local/bin/python2.7 ./dart/tools/gyp_dart.py
 
 do-build:
-	@cd ${WRKSRC}/dart && env -i ${MAKE_ENV} /usr/local/bin/python2.7 ./tools/build.py -m release --arch=x64
+	@cd ${WRKSRC}/dart && env -i ${MAKE_ENV} /usr/local/bin/python2.7 ./tools/build.py -m release --arch=x64 runtime
 
 .include <bsd.port.mk>
