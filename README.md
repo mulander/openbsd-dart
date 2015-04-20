@@ -25,6 +25,25 @@ Status
 
 Ongoing work to make at least the runtime buildable - in a really hacky way for now.
 
+Contributing
+============
+
+Start by forking the repository & checking it out to `/usr/ports/mystuff/lang/dart`.
+You should now be able to go through:
+
+ - `make fetch`
+ - `make checksum`
+ - `make configure`
+ - `make build`
+
+Pick a build error you want to tackle. Go to the port directory (`cd ``make show=WRKSRC`).
+Make an .orig file (`cp target.c{,.orig}`) and apply your changes to target.c. When done
+`cd - && make update-patches`.
+
+Rinse & repeat - comitting after each fixed issue. Send a pull request when you're happy :)
+
+Please use github issues to discuss/suggest changes to the port itself.
+
 TODO
 ====
 
