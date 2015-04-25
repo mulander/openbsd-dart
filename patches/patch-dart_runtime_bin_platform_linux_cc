@@ -1,0 +1,11 @@
+$OpenBSD$
+--- dart/runtime/bin/platform_linux.cc.orig	Sat Apr 25 21:42:40 2015
++++ dart/runtime/bin/platform_linux.cc	Sat Apr 25 21:42:52 2015
+@@ -13,6 +13,7 @@
+ 
+ #include "bin/fdutils.h"
+ 
++extern char **environ;
+ 
+ namespace dart {
+ namespace bin {
