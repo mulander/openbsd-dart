@@ -1,0 +1,14 @@
+$OpenBSD$
+--- dart/runtime/bin/socket_macos.cc.orig	Sat Apr 25 22:40:01 2015
++++ dart/runtime/bin/socket_macos.cc	Sat Apr 25 23:02:39 2015
+@@ -3,8 +3,9 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_MACOS)
++#if defined(TARGET_OS_MACOS) || defined(__OpenBSD__)
+ 
++#include <sys/socket.h> // NOLINT
+ #include <errno.h>  // NOLINT
+ #include <stdio.h>  // NOLINT
+ #include <stdlib.h>  // NOLINT

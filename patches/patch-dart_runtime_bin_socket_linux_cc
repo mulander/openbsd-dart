@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/socket_linux.cc.orig	Sat Apr 25 22:01:41 2015
++++ dart/runtime/bin/socket_linux.cc	Sat Apr 25 22:02:02 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_LINUX)
++#if defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ 
+ #include <errno.h>  // NOLINT
+ #include <stdio.h>  // NOLINT
