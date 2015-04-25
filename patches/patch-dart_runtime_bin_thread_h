@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/thread.h.orig	Sat Apr 25 20:35:39 2015
++++ dart/runtime/bin/thread.h	Sat Apr 25 20:35:53 2015
+@@ -8,7 +8,7 @@
+ #include "platform/globals.h"
+ 
+ // Declare the OS-specific types ahead of defining the generic classes.
+-#if defined(TARGET_OS_ANDROID)
++#if defined(TARGET_OS_ANDROID) || defined(__OpenBSD__)
+ #include "bin/thread_android.h"
+ #elif defined(TARGET_OS_LINUX)
+ #include "bin/thread_linux.h"
