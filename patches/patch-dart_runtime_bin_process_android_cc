@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/process_android.cc.orig	Sat Apr 25 21:48:41 2015
++++ dart/runtime/bin/process_android.cc	Sat Apr 25 21:49:13 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_ANDROID)
++#if defined(TARGET_OS_ANDROID) && defined(__OpenBSD__)
+ 
+ #include "bin/process.h"
+ 
