@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/eventhandler_linux.cc.orig	Sat Apr 25 17:08:01 2015
++++ dart/runtime/bin/eventhandler_linux.cc	Sat Apr 25 17:09:12 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_LINUX)
++#if defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ 
+ #include "bin/eventhandler.h"
+ #include "bin/eventhandler_linux.h"
