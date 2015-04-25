@@ -1,0 +1,16 @@
+$OpenBSD$
+--- dart/runtime/vm/thread_interrupter_linux.cc.orig	Sat Apr 25 16:39:04 2015
++++ dart/runtime/vm/thread_interrupter_linux.cc	Sat Apr 25 16:47:32 2015
+@@ -29,8 +29,12 @@ class ThreadInterrupterLinux : public AllStatic {
+     }
+     ASSERT(OSThread::Compare(state->id, OSThread::GetCurrentThreadId()));
+     // Extract thread state.
++#if defined(__OpenBSD__)
++    mcontext_t mcontext = reinterpret_cast<mcontext_t &>(context_);
++#else
+     ucontext_t* context = reinterpret_cast<ucontext_t*>(context_);
+     mcontext_t mcontext = context->uc_mcontext;
++#endif
+     InterruptedThreadState its;
+     its.tid = state->id;
+     its.pc = SignalHandler::GetProgramCounter(mcontext);
