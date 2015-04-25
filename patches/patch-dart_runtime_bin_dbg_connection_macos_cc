@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/dbg_connection_macos.cc.orig	Sat Apr 25 17:25:11 2015
++++ dart/runtime/bin/dbg_connection_macos.cc	Sat Apr 25 17:26:00 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_MACOS)
++#if defined(TARGET_OS_MACOS) || defined(__OpenBSD__)
+ 
+ #include <errno.h>  // NOLINT
+ #include <stdio.h>  // NOLINT

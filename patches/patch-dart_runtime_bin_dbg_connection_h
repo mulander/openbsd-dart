@@ -1,0 +1,15 @@
+$OpenBSD$
+--- dart/runtime/bin/dbg_connection.h.orig	Sat Apr 25 17:24:55 2015
++++ dart/runtime/bin/dbg_connection.h	Sat Apr 25 17:25:41 2015
+@@ -16,9 +16,9 @@
+ // Declare the OS-specific types ahead of defining the generic class.
+ #if defined(TARGET_OS_ANDROID)
+ #include "bin/dbg_connection_android.h"
+-#elif defined(TARGET_OS_LINUX)
++#elif defined(TARGET_OS_LINUX) && !defined(__OpenBSD__)
+ #include "bin/dbg_connection_linux.h"
+-#elif defined(TARGET_OS_MACOS)
++#elif defined(TARGET_OS_MACOS) || defined(__OpenBSD__)
+ #include "bin/dbg_connection_macos.h"
+ #elif defined(TARGET_OS_WINDOWS)
+ #include "bin/dbg_connection_win.h"
