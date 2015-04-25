@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/runtime/bin/utils_android.cc.orig	Sat Apr 25 20:45:00 2015
++++ dart/runtime/bin/utils_android.cc	Sat Apr 25 20:45:34 2015
+@@ -3,7 +3,7 @@
+ // BSD-style license that can be found in the LICENSE file.
+ 
+ #include "platform/globals.h"
+-#if defined(TARGET_OS_ANDROID)
++#if defined(TARGET_OS_ANDROID) || defined(__OpenBSD__)
+ 
+ #include <errno.h>  // NOLINT
+ #include <netdb.h>  // NOLINT
