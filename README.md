@@ -24,6 +24,12 @@ Status
 ======
 
 Ongoing work to make at least the runtime buildable - in a really hacky way for now.
+Currently fighting with the nss/nspr build. You can see a full build output in this gist:
+
+ - https://gist.github.com/mulander/4929a40b2c8e9bab4440
+
+I restarted it several times, as subsequent builds tend to pick up other files untill the
+whole process settles on a single error.
 
 Contributing
 ============
