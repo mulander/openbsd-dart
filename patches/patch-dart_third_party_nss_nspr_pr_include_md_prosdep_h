@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dart/third_party/nss/nspr/pr/include/md/prosdep.h.orig	Sat Apr 25 23:40:15 2015
++++ dart/third_party/nss/nspr/pr/include/md/prosdep.h	Sun Apr 26 21:02:12 2015
+@@ -40,7 +40,7 @@ PR_BEGIN_EXTERN_C
+ #elif defined(NETBSD)
+ #include "md/_netbsd.h"
+ 
+-#elif defined(OPENBSD)
++#elif defined(__OpenBSD__)
+ #include "md/_openbsd.h"
+ 
+ #elif defined(BSDI)

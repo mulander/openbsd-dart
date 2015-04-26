@@ -1,12 +1,12 @@
 $OpenBSD$
 --- dart/third_party/nss/nspr/pr/include/prcpucfg.h.orig	Sat Apr 25 21:23:50 2015
-+++ dart/third_party/nss/nspr/pr/include/prcpucfg.h	Sat Apr 25 21:24:02 2015
-@@ -7,7 +7,7 @@
- #include "md/_win95.cfg"
- #elif defined(__APPLE__)
++++ dart/third_party/nss/nspr/pr/include/prcpucfg.h	Sun Apr 26 21:03:30 2015
+@@ -9,6 +9,8 @@
  #include "md/_darwin.cfg"
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(__OpenBSD__)
+ #elif defined(__linux__)
  #include "md/_linux.cfg"
++#elif defined(__OpenBSD__)
++#include "md/_openbsd.cfg"
  #else
  #error Add a case for your platform
+ #endif
