@@ -1,6 +1,6 @@
 $OpenBSD$
---- dart/tools/build.py.orig	Tue Mar 24 08:50:19 2015
-+++ dart/tools/build.py	Sat Apr 18 16:06:31 2015
+--- dart/tools/build.py.orig	Fri Apr 24 10:29:57 2015
++++ dart/tools/build.py	Sun May 10 14:08:55 2015
 @@ -112,7 +112,7 @@ def ProcessOptions(options, args):
        return False
    options.os = [ProcessOsOption(os_name) for os_name in options.os]
@@ -10,7 +10,7 @@ $OpenBSD$
        print "Unknown os %s" % os_name
        return False
      if os_name != HOST_OS:
-@@ -435,7 +435,7 @@ def BuildOneConfig(options, target, target_os, mode, a
+@@ -436,7 +436,7 @@ def BuildOneConfig(options, target, target_os, mode, a
               ]
    else:
      make = 'make'

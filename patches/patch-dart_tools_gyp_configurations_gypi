@@ -1,7 +1,7 @@
 $OpenBSD$
---- dart/tools/gyp/configurations.gypi.orig	Sat Apr 18 13:18:47 2015
-+++ dart/tools/gyp/configurations.gypi	Sat Apr 18 13:19:49 2015
-@@ -24,6 +24,7 @@
+--- dart/tools/gyp/configurations.gypi.orig	Fri Apr 24 10:29:57 2015
++++ dart/tools/gyp/configurations.gypi	Sun May 10 14:08:55 2015
+@@ -25,6 +25,7 @@
        ['"<(target_arch)"=="simmips"', { 'dart_target_arch': 'SIMMIPS', }],
        [ 'OS=="linux"', { 'dart_target_os': 'Linux', } ],
        [ 'OS=="mac"', { 'dart_target_os': 'Macos', } ],

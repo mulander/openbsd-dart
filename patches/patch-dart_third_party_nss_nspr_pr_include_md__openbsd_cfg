@@ -1,7 +1,7 @@
 $OpenBSD$
---- dart/third_party/nss/nspr/pr/include/md/_openbsd.cfg.orig	Sun Apr 26 21:06:47 2015
-+++ dart/third_party/nss/nspr/pr/include/md/_openbsd.cfg	Sun Apr 26 21:01:19 2015
-@@ -0,0 +1,384 @@
+--- dart/third_party/nss/nspr/pr/include/md/_openbsd.cfg.orig	Sun May 10 15:39:32 2015
++++ dart/third_party/nss/nspr/pr/include/md/_openbsd.cfg	Sun May 10 16:21:52 2015
+@@ -0,0 +1,388 @@
 +/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 +/* 
 + * The contents of this file are subject to the Mozilla Public
@@ -41,6 +41,10 @@ $OpenBSD$
 +
 +#ifndef XP_UNIX
 +#define XP_UNIX
++#endif
++
++#if defined(__OpenBSD__)
++#define _PR_PTHREADS
 +#endif
 +
 +#ifndef OPENBSD
