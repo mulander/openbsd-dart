@@ -31,6 +31,16 @@ Currently fighting with the nss/nspr build. You can see a full build output in t
 I restarted it several times, as subsequent builds tend to pick up other files untill the
 whole process settles on a single error.
 
+UPDATE: 2015-05-10 posted to the [dart issue tracker #10260](https://code.google.com/p/dart/issues/detail?can=2&start=0&num=100&q=BSD&colspec=ID%20Type%20Status%20Priority%20Area%20Milestone%20Owner%20Summary%20Modified&groupby=&sort=&id=10260)
+
+The build got pretty far, as in most of dart runtime builds without issues with small modifications to use kqueue/pthreads in some places - so far I 'patched' 36 files where most of them is 'use the mac one instead of linux' or 'use the android one instead of linux' with really rare cases when I actually had to edit the code. I obviously took the recommended "[ 'OS=="openbsd"', { 'dart_target_os': 'Linux', } ]," from comment #5.
+
+Unfortunately I'm also having huge issues with building NSPR similarly to what was reported in comment #7 over an year ago. I'm afraid that without guidance/help I won't be able to move far with the port.
+
+Regardless, it would be nice if the project had a porting guide for new platforms. I did not find any documentation that would tell me how the project build system works & how it should be configured. I don't know why the third party libs are bundled with the distribution & how to untangle them to use the system wide installed & already ported libraries. I assume the project has reasons for that but this leads to duplicate effort in software porting on the platform side.
+
+The current state is of course uploaded to the github account linked in comment #10.
+
 Contributing
 ============
 
