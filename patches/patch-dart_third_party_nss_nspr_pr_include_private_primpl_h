@@ -1,7 +1,7 @@
 $OpenBSD$
---- dart/third_party/nss/nspr/pr/include/private/primpl.h.orig	Sun May 10 16:22:38 2015
-+++ dart/third_party/nss/nspr/pr/include/private/primpl.h	Sun May 10 16:22:44 2015
-@@ -14,9 +14,7 @@
+--- dart/third_party/nss/nspr/pr/include/private/primpl.h.orig	Fri Apr 24 10:32:25 2015
++++ dart/third_party/nss/nspr/pr/include/private/primpl.h	Sun May 10 20:02:02 2015
+@@ -14,10 +14,22 @@
   * To be safe, we include pthread.h first.
   */
  
@@ -9,5 +9,28 @@ $OpenBSD$
  #include <pthread.h>
 -#endif
  
++/* PRThread.flags */
++#define _PR_SYSTEM          0x01
++#define _PR_INTERRUPT       0x02
++#define _PR_ATTACHED        0x04        /* created via PR_AttachThread */
++#define _PR_PRIMORDIAL      0x08        /* the thread that called PR_Init */
++#define _PR_ON_SLEEPQ       0x10        /* thread is on the sleepQ */
++#define _PR_ON_PAUSEQ       0x20        /* thread is on the pauseQ */
++#define _PR_SUSPENDING      0x40        /* thread wants to suspend */
++#define _PR_GLOBAL_SCOPE    0x80        /* thread is global scope */
++#define _PR_IDLE_THREAD     0x200       /* this is an idle thread        */
++#define _PR_GCABLE_THREAD   0x400       /* this is a collectable thread */
++#define _PR_BOUND_THREAD    0x800       /* a bound thread */
++#define _PR_INTERRUPT_BLOCKED	0x1000	/* interrupts blocked */
++
  #if defined(_PR_BTHREADS)
  #include <kernel/OS.h>
+ #endif
+@@ -1583,6 +1595,7 @@ struct PRThread {
+     pthread_t id;                   /* pthread identifier for the thread */
+     PRBool idSet;                   /* whether 'id' has been set. Protected by
+                                      * pt_book.ml. */
++    PRUint32 flags;
+ #ifdef _PR_NICE_PRIORITY_SCHEDULING
+     pid_t tid;                      /* Linux-specific kernel thread ID */
+ #endif
