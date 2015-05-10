@@ -1,0 +1,13 @@
+$OpenBSD$
+--- dart/third_party/nss/nspr/pr/include/private/primpl.h.orig	Sun May 10 16:22:38 2015
++++ dart/third_party/nss/nspr/pr/include/private/primpl.h	Sun May 10 16:22:44 2015
+@@ -14,9 +14,7 @@
+  * To be safe, we include pthread.h first.
+  */
+ 
+-#if defined(_PR_PTHREADS)
+ #include <pthread.h>
+-#endif
+ 
+ #if defined(_PR_BTHREADS)
+ #include <kernel/OS.h>
