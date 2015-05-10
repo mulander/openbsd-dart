@@ -5,7 +5,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Dart programming language
 
-V=			1.9.1
+V=			1.10.0
 DISTNAME=		dart-${V}
 
 CATEGORIES=		lang
@@ -18,7 +18,7 @@ MAINTAINER=		Adam Wolk <adam.wolk@koparo.com>
 PERMIT_PACKAGE_CDROM=	patents # TODO: check this
 PERMIT_PACKAGE_FTP =	Yes     # TODO: check this
 PERMIT_DISTFILES_FTP =	Yes	# TODO: check this
-MASTER_SITES=	http://gsdview.appspot.com/dart-archive/channels/stable/raw/44672/src/
+MASTER_SITES=	http://gsdview.appspot.com/dart-archive/channels/stable/raw/45396/src/
 
 MODULES=		gcc4 lang/python
 MODGCC4_ARCHS=		*
