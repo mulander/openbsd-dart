@@ -18,7 +18,7 @@ during a couple of days.
 Goals
 =====
 
-Have a fully functional & working build of dart runtime, sdk & editor for OpenBSD.
+Have a fully functional & working build of dart runtime & sdk for OpenBSD.
 
 Status
 ======
@@ -40,6 +40,10 @@ Unfortunately I'm also having huge issues with building NSPR similarly to what w
 Regardless, it would be nice if the project had a porting guide for new platforms. I did not find any documentation that would tell me how the project build system works & how it should be configured. I don't know why the third party libs are bundled with the distribution & how to untangle them to use the system wide installed & already ported libraries. I assume the project has reasons for that but this leads to duplicate effort in software porting on the platform side.
 
 The current state is of course uploaded to the github account linked in comment #10.
+
+UPDATE: 2015-08-23
+
+The dart issue tracker is obviously gone. The case was migrated as https://github.com/dart-lang/sdk/issues/10260. I'm roughly waiting for the upstream to migrate to BoringSSL as anything else feels like a waste of time. This is reported as https://github.com/dart-lang/sdk/issues/23560 which is currently marked as blocked by https://github.com/dart-lang/sdk/issues/23561. The repo state was tested against Dart v1.10.0, I tried locally against v1.11.3 but most patches no longer apply and there is no point in trying until upstream migrates to BoringSSL.
 
 Contributing
 ============
@@ -68,6 +72,6 @@ TODO
  - Use gcc4 - done
  - Build runtime - WIP
  - Build sdk
- - Build editor
+ - ~~Build editor~~ - no point since the dart team bailed on it
  - Clean up the port (remove hacky build stuff / patches - write proper ones)
  - Upstream proper patches
