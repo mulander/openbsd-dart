@@ -8,7 +8,7 @@ adding proper support for OpenBSD as a new target OS. For now - everything is fa
 game - including tricking the build to use android/mac/linux files when it looks
 like allowing me to move forward.
 
-By now you shold now not to use this package in production or for any important work.
+By now you shold know not to use this package in production or for any important work.
 This repository is published in case anyone wants to chip in to get this done faster
 and for me personally to have a backup/record of the work.
 
