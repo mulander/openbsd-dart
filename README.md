@@ -45,6 +45,18 @@ UPDATE: 2015-08-23
 
 The dart issue tracker is obviously gone. The case was migrated as https://github.com/dart-lang/sdk/issues/10260. I'm roughly waiting for the upstream to migrate to BoringSSL as anything else feels like a waste of time. This is reported as https://github.com/dart-lang/sdk/issues/23560 which is currently marked as blocked by https://github.com/dart-lang/sdk/issues/23561. The repo state was tested against Dart v1.10.0, I tried locally against v1.11.3 but most patches no longer apply and there is no point in trying until upstream migrates to BoringSSL.
 
+UPDATE: 2015-09-02
+
+Dart 1.12 has been released and the blocker for BoringSSL work has been closed (https://github.com/dart-lang/sdk/issues/23561). The main task is still ongoing in https://github.com/dart-lang/sdk/issues/23560. This left me with 2 options.
+
+- wait for a release so I can reuse their tarball mechanism
+- fork the repo and try to add *proper* OpenBSD support
+
+I decided to do it the proper way. It will probably impact hugely the amount of time required to finish the port but should have a higher quality port in the end with a higher chance of upstreaming the changes.
+
+All work is done in https://github.com/mulander/sdk OpenBSD-support branch. Any work done on the port is possible thanks to [Koparo](https://koparo.com) supporting the project.
+
+
 Contributing
 ============
 
