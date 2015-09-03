@@ -56,6 +56,16 @@ I decided to do it the proper way. It will probably impact hugely the amount of 
 
 All work is done in https://github.com/mulander/sdk OpenBSD-support branch. Any work done on the port is possible thanks to [Koparo](https://koparo.com) supporting the project.
 
+UPDATE: 2015-09-04
+
+Started to move forward with the port.
+ - Current effort can be tracked in [this](https://github.com/mulander/sdk/commits/OpenBSD-support) repository
+ - [Reported](https://github.com/dart-lang/sdk/issues/10260) the efforts upstream
+ - [Reported](https://github.com/dart-lang/sdk/issues/24287) outdated gclient setup
+ - [Reported](https://github.com/dart-lang/sdk/issues/24289) the build system ignoring environment variables
+
+The effort will be ongoing. This repository will get semi frequent status updates. Follow the [main fork](https://github.com/mulander/sdk) for up to the minute changes.
+
 
 Contributing
 ============
