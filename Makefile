@@ -20,6 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes     # TODO: check this
 PERMIT_DISTFILES_FTP =	Yes	# TODO: check this
 MASTER_SITES=	http://gsdview.appspot.com/dart-archive/channels/stable/raw/45396/src/
 
+MAKE_ENV+=		V=1
+
 MODULES=		gcc4 lang/python
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c c++
